@@ -1,0 +1,16 @@
+127.0.0.1:6379> HSET bike:1 model Deimos brand Ergonom type 'Enduro bikes' price 4972
+(integer) 4
+127.0.0.1:6379> HGET bike:1 model
+"Deimos"
+127.0.0.1:6379> HGETALL bike:1
+1) "model"
+2) "Deimos"
+3) "brand"
+4) "Ergonom"
+5) "type"
+6) "Enduro bikes"
+7) "price"
+8) "4972"
+127.0.0.1:6379> > HINCRBY bike:1 price 100
+(error) ERR unknown command '>', with args beginning with: 'HINCRBY' 'bike:1' 'price' '100'
+127.0.0.1:6379> (integer) 5072
